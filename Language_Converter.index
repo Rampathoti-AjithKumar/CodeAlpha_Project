@@ -1,10 +1,26 @@
 from deep_translator import GoogleTranslator
+languages = {
+    "en": "English",
+    "hi": "Hindi",
+    "fr": "French",
+    "es": "Spanish",
+    "de": "German",
+    "it": "Italian",
+    "zh-cn": "Chinese (Simplified)",
+    "ja": "Japanese",
+    "ko": "Korean",
+    "ar": "Arabic",
+    "ru": "Russian",
+}
 
-text = input("Enter text to translate: ")
-src_lang = input("Enter source language code (e.g., 'en' for English, 'auto' to detect automatically): ")
-target_lang = input("Enter target language code (e.g., 'hi' for Hindi, 'fr' for French): ")
+print("Supported languages (sample):")
+for code, name in languages.items():
+    print(f"{code} → {name}")
 
+text = input("\nEnter text to translate: ")
+src_lang = input("Enter source language code (or 'auto' to detect automatically): ")
+target_lang = input("Enter target language code: ")
 
 translated = GoogleTranslator(source=src_lang, target=target_lang).translate(text)
 
-print("\nTranslated Text:", translated)
+print("\nTranslated Text:", translated)
