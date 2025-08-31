@@ -1,0 +1,10 @@
+from deep_translator import GoogleTranslator
+
+text = input("Enter text to translate: ")
+src_lang = input("Enter source language code (e.g., 'en' for English, 'auto' to detect automatically): ")
+target_lang = input("Enter target language code (e.g., 'hi' for Hindi, 'fr' for French): ")
+
+
+translated = GoogleTranslator(source=src_lang, target=target_lang).translate(text)
+
+print("\nTranslated Text:", translated)
